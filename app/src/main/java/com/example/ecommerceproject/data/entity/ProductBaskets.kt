@@ -2,11 +2,12 @@ package com.example.ecommerceproject.data.entity
 
 import java.io.Serializable
 
-data class Products(
-    var id:Int,
+data class ProductBaskets(
+    var sepetId:Int,
     var ad:String,
     var resim:String,
     var kategori:String,
     var fiyat:Int,
-    var marka:String
-) :Serializable
+    var siparisAdeti:Int,
+    var kullaniciAdi:String
+):Serializable

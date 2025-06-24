@@ -18,4 +18,9 @@ suspend fun addToProductBasket(ad:String, resim:String, kategori:String, fiyat:I
         fiyat, marka, siparisAdeti, kullaniciAdi)
 }
 
+suspend fun getToProductsBasket(kullaniciAdi: String){
+commerceDao.getToProductsBasket(kullaniciAdi)
+}
+
+
 }

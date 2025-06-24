@@ -2,6 +2,7 @@ package com.example.ecommerceproject.retrofit
 
 import com.example.ecommerceproject.data.entity.CRUDResponse
 import com.example.ecommerceproject.data.entity.CommerceResponse
+import com.example.ecommerceproject.data.entity.ProductBasketResponse
 import retrofit2.http.Field
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -25,5 +26,10 @@ interface CommerceDao {
         @Field("siparisAdeti")siparisAdeti:Int,
         @Field("kullaniciAdi")kullaniciAdi:String
     ):CRUDResponse
+
+
+    @POST("urunler/sepettekiUrunleriGetir.php")
+    suspend fun getToProductsBasket(
+        @Field("kullaniciAdi")kullaniciAdi:String):ProductBasketResponse
 
 }
