@@ -1,4 +1,5 @@
 package com.example.ecommerceproject.data.entity
 
-class CRUDResponse {
-}
+import java.io.Serializable
+
+data class CRUDResponse(var success:Int, var message:String):Serializable
