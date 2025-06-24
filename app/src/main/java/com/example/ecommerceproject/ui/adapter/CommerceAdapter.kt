@@ -3,10 +3,12 @@ package com.example.ecommerceproject.ui.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.ecommerceproject.data.entity.Products
 import com.example.ecommerceproject.databinding.CardDesignBinding
+import com.example.ecommerceproject.ui.screens.MainScreenDirections
 import com.example.ecommerceproject.ui.viewmodel.MainViewModel
 
 class CommerceAdapter(var mContext:Context, var productList:List<Products>, var viewModel: MainViewModel):
@@ -33,6 +35,12 @@ RecyclerView.Adapter<CommerceAdapter.CardHolder>()
         productDesign.textProductName.text = product.ad
         productDesign.productCategory.text= product.kategori
         productDesign.productBrand.text= product.marka
+        productDesign.productPrice.text = product.fiyat.toString()
+
+        productDesign.cardViewToDo.setOnClickListener{
+            val toProductDetail = MainScreenDirections.toProductDetailScreen(productDetail = product)
+            it.findNavController().navigate(toProductDetail)
+        }
 
 
     }

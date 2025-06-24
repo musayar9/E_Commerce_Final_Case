@@ -31,7 +31,7 @@ class MainScreen : Fragment() {
 
         viewModel.productsList.observe(viewLifecycleOwner){
             val commerceAdapter = CommerceAdapter(requireContext(), it, viewModel)
-            binding.recyclerProductList.adapter=commerceAdapter
+            binding.recyclerProductList.adapter = commerceAdapter
         }
         binding.recyclerProductList.layoutManager = StaggeredGridLayoutManager(
             2,

@@ -11,4 +11,11 @@ class CommerceDataSource(var commerceDao: CommerceDao) {
 suspend fun getAllProducts():List<Products> = withContext(Dispatchers.IO){
     return@withContext commerceDao.getAllProducts().urunler
 }
+
+suspend fun addToProductBasket(ad:String, resim:String, kategori:String, fiyat:Int, marka:String,
+                               siparisAdeti:Int, kullaniciAdi:String){
+    commerceDao.addToProductBasket(ad, resim, kategori,
+        fiyat, marka, siparisAdeti, kullaniciAdi)
+}
+
 }

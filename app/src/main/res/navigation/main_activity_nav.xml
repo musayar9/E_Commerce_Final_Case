@@ -25,13 +25,19 @@
         <action android:id="@+id/toBasketScreen"
             app:destination="@+id/basketScreen"
             />
-
+        <argument android:name="productDetail"
+            app:argType="com.example.ecommerceproject.data.entity.Products"/>
     </fragment>
     <fragment
         android:id="@+id/basketScreen"
         android:name="com.example.ecommerceproject.ui.screens.BasketScreen"
         android:label="basket_screen"
-        tools:layout="@layout/basket_screen" />
+        tools:layout="@layout/basket_screen"
+
+        >
+
+
+    </fragment>
 
 
 </navigation>
