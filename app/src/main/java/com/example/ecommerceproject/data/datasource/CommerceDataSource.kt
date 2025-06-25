@@ -1,5 +1,6 @@
 package com.example.ecommerceproject.data.datasource
 
+import com.example.ecommerceproject.data.entity.ProductBaskets
 import com.example.ecommerceproject.data.entity.Products
 import com.example.ecommerceproject.retrofit.CommerceDao
 import kotlinx.coroutines.Dispatchers
@@ -12,15 +13,16 @@ suspend fun getAllProducts():List<Products> = withContext(Dispatchers.IO){
     return@withContext commerceDao.getAllProducts().urunler
 }
 
-suspend fun addToProductBasket(ad:String, resim:String, kategori:String, fiyat:Int, marka:String,
+    suspend fun addToProductBasket(ad:String, resim:String, kategori:String, fiyat:Int, marka:String,
                                siparisAdeti:Int, kullaniciAdi:String){
-    commerceDao.addToProductBasket(ad, resim, kategori,
-        fiyat, marka, siparisAdeti, kullaniciAdi)
+                                commerceDao.addToProductBasket(ad, resim, kategori,
+                                    fiyat, marka, siparisAdeti, kullaniciAdi)
 }
 
-suspend fun getToProductsBasket(kullaniciAdi: String){
-commerceDao.getToProductsBasket(kullaniciAdi)
+    suspend fun getToProductsBasket(kullaniciAdi: String):List<ProductBaskets> = withContext(Dispatchers.IO){
+        return@withContext commerceDao.getToProductsBasket(kullaniciAdi).urunler_sepeti
 }
 
+    suspend fun deleteProductBasket(sepetId:Int, kullaniciAdi: String) = commerceDao.deleteProductBasket(sepetId, kullaniciAdi)
 
 }

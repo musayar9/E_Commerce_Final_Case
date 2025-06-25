@@ -43,5 +43,7 @@ RecyclerView.Adapter<CommerceAdapter.CardHolder>()
         }
 
 
+
+
     }
 }

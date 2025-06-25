@@ -1,6 +1,7 @@
 package com.example.ecommerceproject.data.repo
 
 import com.example.ecommerceproject.data.datasource.CommerceDataSource
+import com.example.ecommerceproject.data.entity.ProductBaskets
 import com.example.ecommerceproject.data.entity.Products
 
 class CommerceRepository(var commerceDataSource: CommerceDataSource) {
@@ -10,4 +11,12 @@ class CommerceRepository(var commerceDataSource: CommerceDataSource) {
     suspend fun addToProductBasket(ad:String, resim:String, kategori:String, fiyat:Int, marka:String,
                                    siparisAdeti:Int, kullaniciAdi:String) =
         commerceDataSource.addToProductBasket(ad, resim, kategori, fiyat, marka, siparisAdeti, kullaniciAdi)
+
+    suspend fun getToProductsBasket(kullaniciAdi: String):List<ProductBaskets> {
+      return   commerceDataSource.getToProductsBasket(kullaniciAdi)
+    }
+
+    suspend fun deleteProductBasket(sepetId:Int, kullaniciAdi: String ) = commerceDataSource.deleteProductBasket(sepetId, kullaniciAdi)
+
+
 }

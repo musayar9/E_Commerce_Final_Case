@@ -15,6 +15,10 @@
             app:destination="@+id/productDetailScreen"
             />
 
+        <action android:id="@+id/toBasketScreen"
+            app:destination="@+id/basketScreen"
+            />
+
     </fragment>
     <fragment
         android:id="@+id/productDetailScreen"
@@ -33,7 +37,6 @@
         android:name="com.example.ecommerceproject.ui.screens.BasketScreen"
         android:label="basket_screen"
         tools:layout="@layout/basket_screen"
-
         >
 
 

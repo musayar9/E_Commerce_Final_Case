@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
@@ -41,7 +42,7 @@ class ProductDetailScreen : Fragment() {
         val imageUrl = "http://kasimadalan.pe.hu/urunler/resimler/${product.resim}"
         Glide.with(this).load(imageUrl).override(64,64).into(binding.imageView)
         binding.productAmount.text = amount.toString()
-        binding.productName.text = product.ad
+        binding.productName.text = product.ad.toString()
         binding.productPrice.text = product.fiyat.toString()
 
         binding.incrementBtn.setOnClickListener{
@@ -64,9 +65,6 @@ class ProductDetailScreen : Fragment() {
 
         }
 
-
-
-
         binding.addBasketBtn.setOnClickListener{
             val ad = product.ad
             val fiyat  = product.fiyat
@@ -74,13 +72,18 @@ class ProductDetailScreen : Fragment() {
             val kategori = product.kategori
             val resim = product.resim
             val siparisAdeti = amount
-            val kukullaniciAdi = "musa_sayary"
-            Log.e("Musa", "${ad}, ${kukullaniciAdi}, ${fiyat}")
-
+            val kullaniciAdi = "musa_sayar"
+            Log.e("Musa", "${ad}, ${kullaniciAdi}, ${fiyat}")
+          viewModel.addToProductBasket(ad, resim, kategori, fiyat, marka, siparisAdeti, kullaniciAdi)
             it.findNavController().navigate(toBasketScreen)
         }
      return binding.root
     }
 
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        //
+        val tempViewModel: ProductDetailViewModel by viewModels()
+        viewModel = tempViewModel
+    }
 }

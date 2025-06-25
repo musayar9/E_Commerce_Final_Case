@@ -7,14 +7,25 @@
     tools:context=".ui.screens.BasketScreen" >
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/basketTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="Basket Screen"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerBasketView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/basketTitle" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,6 +20,7 @@ class MainViewModel @Inject constructor(var commerceRepository: CommerceReposito
 
     fun getAllProducts(){
         CoroutineScope(Dispatchers.Main).launch {
+
             productsList.value = commerceRepository.getAllProducts()
         }
     }
