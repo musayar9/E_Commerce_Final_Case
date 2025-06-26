@@ -7,17 +7,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.ecommerceproject.R
 
 import com.example.ecommerceproject.databinding.MainScreenBinding
 import com.example.ecommerceproject.R.id.toProductDetailScreen
 import com.example.ecommerceproject.R.id.toBasketScreen
+import com.example.ecommerceproject.R.id.toFavoriteScreen
 import com.example.ecommerceproject.ui.adapter.CommerceAdapter
 import com.example.ecommerceproject.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.ArrayList
 
 @AndroidEntryPoint
 class MainScreen : Fragment() {
@@ -47,6 +51,11 @@ class MainScreen : Fragment() {
             it.findNavController().navigate(toProductDetailScreen)
         }
 
+
+        binding.favoriteBtn.setOnClickListener {
+            it.findNavController().navigate(toFavoriteScreen)
+        }
+
         binding.productBasket.setOnClickListener{
             it.findNavController().navigate(toBasketScreen)
         }
@@ -56,14 +65,15 @@ class MainScreen : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
-        val tempViewModel:MainViewModel by viewModels()
+        val tempViewModel:MainViewModel by activityViewModels()
         viewModel=tempViewModel
     }
 
     override fun onResume() {
         super.onResume()
         Log.e("refresh", "refreshed")
-        viewModel.productsList.value = emptyList()
+       viewModel.productsList.value = emptyList()
+
         viewModel.getAllProducts()
     }
 

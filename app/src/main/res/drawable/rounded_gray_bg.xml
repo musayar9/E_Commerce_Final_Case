@@ -3,8 +3,8 @@
 <item>
     <shape xmlns:android="http://schemas.android.com/apk/res/android"
         android:shape="rectangle">
-        <solid android:color="#D3D3D3" /> <!-- Gri renk -->
-        <corners android:radius="20dp" /> <!-- Yuvarlak köşe -->
+        <solid android:color="@color/gray50" /> <!-- Gri renk -->
+        <corners android:radius="25dp" /> <!-- Yuvarlak köşe -->
     </shape>
 
 </item>
