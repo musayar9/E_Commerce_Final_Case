@@ -31,6 +31,7 @@ class MainScreen : Fragment() {
 
 
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,6 +51,7 @@ class MainScreen : Fragment() {
         binding.producDetailBtn.setOnClickListener{
             it.findNavController().navigate(toProductDetailScreen)
         }
+
 
 
         binding.favoriteBtn.setOnClickListener {
@@ -72,9 +74,9 @@ class MainScreen : Fragment() {
     override fun onResume() {
         super.onResume()
         Log.e("refresh", "refreshed")
-       viewModel.productsList.value = emptyList()
+     //  viewModel.productsList.value = emptyList()
 
-        viewModel.getAllProducts()
+     //   viewModel.getAllProducts()
     }
 
 

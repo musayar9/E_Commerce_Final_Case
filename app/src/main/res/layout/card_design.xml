@@ -2,36 +2,42 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
     >
 
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cardViewToDo"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:cardCornerRadius="8dp"
+
+    android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:cardElevation="2dp"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="12dp">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/productImage"
-                android:layout_width="0dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="0dp"
-                android:background="@color/gray50"
+                android:layout_width="173dp"
+                android:layout_height="185dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/slate100"
                 android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearanceOverlay="@style/productImage"
@@ -49,100 +55,38 @@
                 app:layout_constraintEnd_toEndOf="@+id/productImage"
                 app:layout_constraintTop_toTopOf="@+id/productImage" />
 
+
             <TextView
                 android:id="@+id/textProductName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_width="201dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:lines="2"
+                android:maxLines="2"
                 android:text="Phone"
                 android:textColor="#000"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:maxLines="2"
-                android:ellipsize="end"
-                android:lines="2"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/productImage" />
 
-            <LinearLayout
-                android:id="@+id/linearLayout2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textProductName">
-
-                <ImageView
-                    android:id="@+id/productStart"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:contentDescription="rating star"
-                    android:src="@drawable/category" />
-
-                <TextView
-                    android:id="@+id/productCategory"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:text="Telefon"
-                    android:textColor="#000"
-                    android:textSize="16sp" />
-
-
-            </LinearLayout>
-
             <TextView
-                android:id="@+id/productBrand"
+                android:id="@+id/productPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="3 ay taksit"
-                android:textColor="@color/black"
-                android:textSize="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="1"
+                android:text="200"
+                android:textColor="#111"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-
-
-            <LinearLayout
-                android:id="@+id/linearLayoutPrice"
-                android:layout_width="178dp"
-                android:layout_height="41dp"
-                android:layout_marginTop="80dp"
-                android:background="@drawable/price_content_field"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingHorizontal="4dp"
-                android:paddingVertical="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-                <TextView
-                    android:id="@+id/productPrice"
-                    android:layout_width="103dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="4dp"
-                    android:text="200"
-                    android:textColor="#111"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:id="@+id/productShop"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_marginStart="8dp"
-                    android:contentDescription="add to cart"
-                    android:src="@drawable/add_shopping_cart" />
-            </LinearLayout>
+                app:layout_constraintStart_toStartOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

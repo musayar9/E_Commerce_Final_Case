@@ -18,7 +18,7 @@
     </style>
     <style name="productImage">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">4dp</item>
+        <item name="cornerSize">12dp</item>
     </style>
 
     <!-- res/values/styles.xml -->

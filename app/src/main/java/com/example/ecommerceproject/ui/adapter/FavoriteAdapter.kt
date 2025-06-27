@@ -37,9 +37,11 @@ RecyclerView.Adapter<FavoriteAdapter.FavoriteHolder>(){
         val imageUrl = "http://kasimadalan.pe.hu/urunler/resimler/${product.resim}"
         Glide.with(mContext).load(imageUrl).override(128,128).into(productDesign.productImage)
         productDesign.textProductName.text = product.ad
-        productDesign.productCategory.text= product.kategori
-        productDesign.productBrand.text= product.marka
-        productDesign.productPrice.text = product.fiyat.toString()
+//        productDesign.productCategory.text= product.kategori
+//        productDesign.productBrand.text= product.marka
+        val price = viewModel.formatPrice(product.fiyat)
+        productDesign.productPrice.text = "${price.toString()}"
+
 
 
         // Favori durumunu güncelle

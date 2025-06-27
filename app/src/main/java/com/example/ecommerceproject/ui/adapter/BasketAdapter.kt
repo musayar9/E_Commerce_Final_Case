@@ -31,6 +31,9 @@ class BasketAdapter(var mContext:Context, var basketList:List<ProductBaskets>, v
     }
 
     override fun getItemCount(): Int = basketList.size
+
+
+
     override fun onBindViewHolder(holder: BasketHolder, position: Int) {
         val basket = basketList.get(position)
         val basketDesign = holder.binding

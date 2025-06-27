@@ -27,5 +27,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/basketTitle" />
 
+    <LinearLayout
+        android:id="@+id/emptyList"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="308dp"
+        android:background="@drawable/rounded_gray_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingVertical="20dp"
 
+
+        >
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="150dp"
+
+            android:layout_height="120dp"
+            android:layout_weight="1"
+            android:src="@drawable/add_shopping_cart"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/emptyBasketMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:lineHeight="20dp"
+            android:paddingHorizontal="20dp"
+            android:text="Henüz sepetinize ürün eklmedini"
+            android:textAlignment="center"
+            android:textColor="@color/gray150"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerFavorite"
+            android:textFontWeight="@integer/material_motion_duration_medium_1"
+            />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

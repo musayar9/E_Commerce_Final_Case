@@ -2,9 +2,13 @@ package com.example.ecommerceproject.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.viewbinding.ViewBindings
 import com.example.ecommerceproject.data.entity.ProductBaskets
 import com.example.ecommerceproject.data.repo.CommerceRepository
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.textfield.TextInputLayout.LengthCounter
 import dagger.hilt.android.lifecycle.HiltViewModel
+import com.example.ecommerceproject.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -30,4 +34,7 @@ class BasketViewModel @Inject constructor(var commerceRepository: CommerceReposi
             getToProductsBasket(kullaniciAdi)
         }
     }
+
+
+
 }

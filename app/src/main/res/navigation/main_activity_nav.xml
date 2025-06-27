@@ -11,6 +11,7 @@
         android:label="main_screen"
         tools:layout="@layout/main_screen"
         >
+        <action android:id="@+id/toMainScreen" app:destination="@id/mainScreen"/>
         <action android:id="@+id/toProductDetailScreen"
             app:destination="@+id/productDetailScreen"
             />

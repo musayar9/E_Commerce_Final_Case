@@ -6,6 +6,9 @@
     <color name="gray50">#f1f1f1</color>
     <color name="gray100">#7b7b7b</color>
     <color name="gray150">#757575</color>
+
+    <color name="slate50">#eff1f3</color>
+    <color name="slate100">#e2e8f0</color>
     <color name="purple">#7B1FA2</color>
     <color name="indigo">#615FFF</color>
 </resources>

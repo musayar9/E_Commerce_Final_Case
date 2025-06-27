@@ -75,7 +75,7 @@ class ProductDetailScreen : Fragment() {
             val kullaniciAdi = "musa_sayar"
             Log.e("Musa", "${ad}, ${kullaniciAdi}, ${fiyat}")
           viewModel.addToProductBasket(ad, resim, kategori, fiyat, marka, siparisAdeti, kullaniciAdi)
-            it.findNavController().navigate(toBasketScreen)
+            Toast.makeText(requireContext(),"Ürün Sepete Eklendi", Toast.LENGTH_SHORT ).show()
         }
      return binding.root
     }

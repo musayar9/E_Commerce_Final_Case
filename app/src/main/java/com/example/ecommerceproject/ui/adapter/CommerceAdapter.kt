@@ -12,6 +12,8 @@ import com.example.ecommerceproject.data.entity.Products
 import com.example.ecommerceproject.databinding.CardDesignBinding
 import com.example.ecommerceproject.ui.screens.MainScreenDirections
 import com.example.ecommerceproject.ui.viewmodel.MainViewModel
+import java.text.NumberFormat
+import java.util.Locale
 import java.util.UUID
 
 
@@ -38,9 +40,10 @@ RecyclerView.Adapter<CommerceAdapter.CardHolder>()
         val imageUrl = "http://kasimadalan.pe.hu/urunler/resimler/${product.resim}"
         Glide.with(mContext).load(imageUrl).override(128,128).into(productDesign.productImage)
         productDesign.textProductName.text = product.ad
-        productDesign.productCategory.text= product.kategori
-        productDesign.productBrand.text= product.marka
-        productDesign.productPrice.text = product.fiyat.toString()
+//        productDesign.productCategory.text= product.kategori
+//        productDesign.productBrand.text= product.marka
+        val price = viewModel.formatPrice(product.fiyat)
+        productDesign.productPrice.text = "${price.toString()}"
 
         productDesign.cardViewToDo.setOnClickListener{
             val toProductDetail = MainScreenDirections.toProductDetailScreen(productDetail = product)
