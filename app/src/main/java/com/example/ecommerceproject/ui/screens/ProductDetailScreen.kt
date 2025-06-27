@@ -40,11 +40,11 @@ class ProductDetailScreen : Fragment() {
 
         Log.e("ProdyuctDeta", "$product")
         val imageUrl = "http://kasimadalan.pe.hu/urunler/resimler/${product.resim}"
-        Glide.with(this).load(imageUrl).override(64,64).into(binding.imageView)
+        Glide.with(this).load(imageUrl).override(128,128).into(binding.imageView)
         binding.productAmount.text = amount.toString()
         binding.productName.text = product.ad.toString()
         binding.productPrice.text = product.fiyat.toString()
-
+        binding.productOnlyPrice.text = product.fiyat.toString()
         binding.incrementBtn.setOnClickListener{
             amount += 1
             productPrice = amount * product.fiyat

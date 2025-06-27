@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape
+            android:shape="rectangle">
+
+            <!-- 80 = %50 opacity (hex olarak) -->
+            <solid android:color="#801E40AF"/> <!-- indigo #1E40AF'in %50 saydam hali -->
+            <corners android:radius="20dp"/>
+            <stroke
+                android:width="0.5dp"
+                android:color="#80808080" /> <!-- Gri stroke için %50 saydamlık -->
+        </shape>
+    </item>
+</selector>

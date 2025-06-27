@@ -4,89 +4,304 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.screens.ProductDetailScreen">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="416dp"
-        android:layout_height="187dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/phone"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/detailImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/slate100"
+        >
+
+
+        <ImageView
+            android:id="@+id/favorite"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/like_full_corner_bg"
+           android:padding="12dp"
+
+            android:src="@drawable/arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginVertical="20dp"
+
+            android:src="@drawable/phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/badge_field"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="5dp"
+                android:src="@drawable/category_badge" />
+
+            <TextView
+                android:id="@+id/productCategory"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text="Phone"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <TextView
         android:id="@+id/productName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+
         android:text="Iphone"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailImage" />
 
-
-    <Button
-        android:id="@+id/addBasketBtn"
+    <TextView
+        android:id="@+id/productBrand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+
+        android:text="Apple"
+        android:textSize="16sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productName" />
+
+    <TextView
+        android:id="@+id/productOnlyPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+
+        android:text="250.000"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailImage" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="12dp"
-        android:text="Add Sepete"
+        android:layout_marginVertical="8dp"
+        android:paddingVertical="8dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productPrice" />
+        app:layout_constraintTop_toBottomOf="@+id/productBrand">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/content_field"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp"
+
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/stars" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="8dp"
+                android:text="4.8"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="117 reviews"
+                android:textColor="@color/gray150" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/content_field"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/like_icons" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="8dp"
+                android:text="94%"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:background="@drawable/content_field"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/comment_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="8dp"
+                android:text="8"
+
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addBasketBtn"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="359dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="440dp"
+        android:backgroundTint="@color/indigo"
+        android:text="Sepete Ekle"
+        android:textAppearance="@color/indigo"
+
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:cornerRadius="@dimen/dimen_8"
+        app:iconGravity="textStart"
+        app:iconTint="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailImage" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="419dp"
-        android:layout_height="101dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="195dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="172dp"
         android:orientation="horizontal"
+
         app:layout_constraintEnd_toEndOf="parent"
-        android:paddingHorizontal="20dp"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productName">
 
-        <Button
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/decrementBtn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:text="-" />
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/indigo"
+            android:text="-"
+            android:textSize="24sp"
+            app:cornerRadius="@dimen/dimen_8"
+            app:iconGravity="textStart"
+            app:iconSize="24dp"
+            app:iconTint="@android:color/white" />
 
         <TextView
             android:id="@+id/productAmount"
-            android:layout_width="wrap_content"
+            android:layout_width="133dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:text="TextView" />
-        <Button
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/incrementBtn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:text="+" />
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/indigo"
+            android:text="+"
+            android:textSize="24sp"
+            app:cornerRadius="@dimen/dimen_8"
+            app:iconGravity="textStart"
+            app:iconSize="24dp"
+            app:iconTint="@android:color/white" />
+
     </LinearLayout>
 
     <TextView
         android:id="@+id/productPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="55"
-        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="1300.00"
+        android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:text="Sepete Ürün Ekle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

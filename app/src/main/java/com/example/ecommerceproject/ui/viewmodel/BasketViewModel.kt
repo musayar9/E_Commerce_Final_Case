@@ -1,5 +1,6 @@
 package com.example.ecommerceproject.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBindings
@@ -22,11 +23,20 @@ class BasketViewModel @Inject constructor(var commerceRepository: CommerceReposi
         getToProductsBasket("musa_sayar")
     }
 
-    fun getToProductsBasket(kullaniciAdi:String){
+    fun getToProductsBasket(kullaniciAdi: String) {
         CoroutineScope(Dispatchers.Main).launch {
-            basketProductsList.value = commerceRepository.getToProductsBasket(kullaniciAdi)
+            try {
+                val result = commerceRepository.getToProductsBasket(kullaniciAdi)
+                basketProductsList.value = result
+            } catch (e: Exception) {
+                // Hata durumunda log yaz veya kullanıcıya bilgi ver
+                Log.e("error", "${e.message}")
+                e.printStackTrace() // Logcat'e yazmak için
+                basketProductsList.value = emptyList() // Listeyi temizle veya null bırakabilirsin
+            }
         }
     }
+
 
     fun deleteProductBasket(sepetId:Int, kullaniciAdi: String){
         CoroutineScope(Dispatchers.Main).launch {
