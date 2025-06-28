@@ -7,6 +7,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.text.NumberFormat
+import java.util.Locale
 import javax.inject.Inject
 
 @HiltViewModel
@@ -17,5 +19,11 @@ class ProductDetailViewModel @Inject constructor(var commerceRepository: Commerc
         CoroutineScope(Dispatchers.Main).launch {
             commerceRepository.addToProductBasket(ad, resim, kategori, fiyat, marka, siparisAdeti, kullaniciAdi)
         }
+    }
+
+    fun formatPrice(price: Int): String {
+        val format = NumberFormat.getCurrencyInstance(Locale("tr", "TR"))
+        Log.d("MainViewModel", "Price is ${format.format(price)}")
+        return format.format(price)
     }
 }

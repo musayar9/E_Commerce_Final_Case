@@ -8,13 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 
 import com.example.ecommerceproject.databinding.ProductDetailScreenBinding
 
 import com.example.ecommerceproject.R.id.toBasketScreen
+import com.example.ecommerceproject.ui.viewmodel.MainViewModel
 import com.example.ecommerceproject.ui.viewmodel.ProductDetailViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -23,7 +26,7 @@ class ProductDetailScreen : Fragment() {
 
     private lateinit var binding : ProductDetailScreenBinding
     private lateinit var viewModel:ProductDetailViewModel
-
+    private lateinit var mainViewModel: MainViewModel
     private   var amount:Int = 1
     private var productPrice:Int =0
 
@@ -43,13 +46,15 @@ class ProductDetailScreen : Fragment() {
         Glide.with(this).load(imageUrl).override(128,128).into(binding.imageView)
         binding.productAmount.text = amount.toString()
         binding.productName.text = product.ad.toString()
-        binding.productPrice.text = product.fiyat.toString()
-        binding.productOnlyPrice.text = product.fiyat.toString()
+        val price = viewModel.formatPrice(product.fiyat)
+        binding.productPrice.text = price.toString()
+        binding.productOnlyPrice.text = price.toString()
         binding.incrementBtn.setOnClickListener{
             amount += 1
             productPrice = amount * product.fiyat
+            var convertPrice = viewModel.formatPrice(productPrice)
             binding.productAmount.setText(amount.toString())
-            binding.productPrice.setText(productPrice.toString())
+            binding.productPrice.setText(convertPrice.toString())
 
         }
 
@@ -60,11 +65,14 @@ class ProductDetailScreen : Fragment() {
             }
             amount -= 1
             productPrice -= product.fiyat
+            var convertPrice = viewModel.formatPrice(productPrice)
             binding.productAmount.setText(amount.toString())
-            binding.productPrice.setText(productPrice.toString())
+            binding.productPrice.setText(convertPrice.toString())
 
         }
-
+        binding.backButton.setOnClickListener{
+findNavController().popBackStack()
+        }
         binding.addBasketBtn.setOnClickListener{
             val ad = product.ad
             val fiyat  = product.fiyat
@@ -75,7 +83,7 @@ class ProductDetailScreen : Fragment() {
             val kullaniciAdi = "musa_sayar"
             Log.e("Musa", "${ad}, ${kullaniciAdi}, ${fiyat}")
           viewModel.addToProductBasket(ad, resim, kategori, fiyat, marka, siparisAdeti, kullaniciAdi)
-            Toast.makeText(requireContext(),"Ürün Sepete Eklendi", Toast.LENGTH_SHORT ).show()
+            Toast.makeText(requireContext(),"${ad} Sepete Eklendi", Toast.LENGTH_SHORT ).show()
         }
      return binding.root
     }

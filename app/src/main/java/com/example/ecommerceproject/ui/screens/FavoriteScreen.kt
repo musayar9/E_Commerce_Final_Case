@@ -44,10 +44,13 @@ class FavoriteScreen : Fragment() {
             if (favoriteList.isEmpty()) {
                 binding.recyclerFavorite.visibility = View.GONE
                 binding.emptyList.visibility = View.VISIBLE
+                binding.favoriteHeadField.visibility = View.GONE
                 Log.d("FavoriteScreen", "Favorite list is empty")
             } else {
                 binding.recyclerFavorite.visibility = View.VISIBLE
                 binding.emptyList.visibility = View.GONE
+                binding.favoriteHeadField.visibility = View.VISIBLE
+                binding.favoriteSize.text = favoriteList.size.toString()
                 Log.d("FavoriteScreen", "Favorite list is not empty: ${favoriteList.size} items")
             }
         }

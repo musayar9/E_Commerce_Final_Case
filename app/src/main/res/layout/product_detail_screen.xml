@@ -9,24 +9,23 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/detailImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="427dp"
+        android:layout_height="288dp"
+        android:background="@color/slate100"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/slate100"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <ImageView
-            android:id="@+id/favorite"
+            android:id="@+id/backButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
 
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/like_full_corner_bg"
-           android:padding="12dp"
+            android:padding="12dp"
 
             android:src="@drawable/arrow_back"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,12 +33,14 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="230dp"
+            android:layout_height="206dp"
             android:layout_marginVertical="20dp"
 
             android:src="@drawable/phone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/badge_field"
             android:gravity="center"
@@ -119,38 +120,42 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
         android:layout_marginVertical="8dp"
-        android:paddingVertical="8dp"
 
+
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="8dp"
+        android:paddingVertical="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/contentDetail"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.219"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productBrand">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:layout_gravity="center"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/content_field"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="8dp"
-
-            >
+            android:padding="10dp">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
                 android:src="@drawable/stars" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="8dp"
+                android:layout_marginEnd="6dp"
                 android:text="4.8"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -163,11 +168,13 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/content_field"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="8dp">
+
+            android:padding="10dp"
+            android:paddingHorizontal="12dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -179,7 +186,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="8dp"
                 android:text="94%"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -190,7 +197,7 @@
             android:layout_gravity="center_horizontal"
 
             android:background="@drawable/content_field"
-            android:padding="8dp">
+            android:padding="10dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -203,44 +210,76 @@
                 android:paddingHorizontal="8dp"
                 android:text="8"
 
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/contentDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/contentHead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ürün İçeriği"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="@dimen/dimen_4"
+            android:paddingVertical="6dp"
+            android:text="@string/content_detail_text"
+            android:textColor="@color/slate150"
+
+            android:textSize="16sp" />
     </LinearLayout>
 
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/addBasketBtn"
         style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="359dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="440dp"
+        android:layout_width="388dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="36dp"
         android:backgroundTint="@color/indigo"
         android:text="Sepete Ekle"
-        android:textAppearance="@color/indigo"
 
+        android:textAppearance="@color/indigo"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:cornerRadius="@dimen/dimen_8"
         app:iconGravity="textStart"
         app:iconTint="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailImage" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="195dp"
         android:layout_height="55dp"
-        android:layout_marginTop="172dp"
-        android:orientation="horizontal"
 
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productName">
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
 
 
         <com.google.android.material.button.MaterialButton
@@ -258,11 +297,15 @@
 
         <TextView
             android:id="@+id/productAmount"
-            android:layout_width="133dp"
-            android:layout_height="wrap_content"
+            android:layout_width="140dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:text="TextView" />
+            android:textColor="@color/slate150"
+            android:text="TextView"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/incrementBtn"
@@ -283,25 +326,27 @@
         android:id="@+id/productPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="1300.00"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:textSize="28sp"
-        android:textStyle="bold"
+        android:layout_marginTop="24dp"
         android:text="Sepete Ürün Ekle"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/contentDetail" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

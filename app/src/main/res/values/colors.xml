@@ -11,6 +11,7 @@
     <color name="green50">#c4e902</color>
     <color name="slate50">#eff1f3</color>
     <color name="slate100">#e2e8f0</color>
+    <color name="slate150">#62748e</color>
     <color name="purple">#7B1FA2</color>
     <color name="indigo">#615FFF</color>
 </resources>

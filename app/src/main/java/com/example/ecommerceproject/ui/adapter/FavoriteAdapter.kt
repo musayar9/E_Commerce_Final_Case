@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -47,27 +48,30 @@ RecyclerView.Adapter<FavoriteAdapter.FavoriteHolder>(){
         // Favori durumunu güncelle
         val isFavorite = viewModel.favoriteList.value?.any { it.id == product.id } ?: false
         productDesign.favorite.setImageResource(
-            if (isFavorite) R.drawable.is_favorite else R.drawable.baseline_favorite_border_24
+            if (isFavorite) R.drawable.favorite_regular else R.drawable.empty_favorite
         )
 
         if(isFavorite){
 
-            productDesign.favorite.setImageResource(R.drawable.is_favorite)
+            productDesign.favorite.setImageResource(R.drawable.favorite_regular)
         }else{
-            productDesign.favorite.setImageResource(R.drawable.baseline_favorite_border_24)
+            productDesign.favorite.setImageResource(R.drawable.empty_favorite)
         }
 
         productDesign.favorite.setOnClickListener {
 
 
-            if (isFavorite) {
-                viewModel.removeFavorite(product)
-                productDesign.favorite.setImageResource(R.drawable.baseline_favorite_border_24)
-            } else {
-                viewModel.addFavorite(product)
-                productDesign.favorite.setImageResource(R.drawable.is_favorite)
-            }
-
+//            if (isFavorite) {
+//                viewModel.removeFavorite(product)
+//                productDesign.favorite.setImageResource(R.drawable.empty_favorite)
+//
+//            } else {
+//                viewModel.addFavorite(product)
+//                productDesign.favorite.setImageResource(R.drawable.favorite_regular)
+//            }
+            viewModel.removeFavorite(product)
+             productDesign.favorite.setImageResource(R.drawable.empty_favorite)
+            Toast.makeText(mContext, "${product.ad} ürünü favorilerden çıkarıldı", Toast.LENGTH_SHORT).show()
             notifyItemChanged(position)
         }
 

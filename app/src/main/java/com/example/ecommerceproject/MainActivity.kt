@@ -1,6 +1,7 @@
 package com.example.ecommerceproject
 
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.LinearLayout
 
 import androidx.appcompat.app.AppCompatActivity
