@@ -7,6 +7,7 @@ data class ProductBaskets(
     var ad:String,
     var resim:String,
     var kategori:String,
+    var marka:String,
     var fiyat:Int,
     var siparisAdeti:Int,
     var kullaniciAdi:String

@@ -23,18 +23,38 @@
     />
 
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationField"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:elevation="8dp"
-        app:menu="@menu/bottom_nav_menu"
-        app:itemIconTint="@color/nav_selector"
-        app:itemTextColor="@color/nav_selector"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:id="@+id/topDivider"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="@color/gray50"
+
+            app:layout_constraintBottom_toTopOf="@+id/navigationField"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigationField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="8dp"
+            app:itemIconTint="@color/nav_selector"
+            app:itemTextColor="@color/nav_selector"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_nav_menu" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 

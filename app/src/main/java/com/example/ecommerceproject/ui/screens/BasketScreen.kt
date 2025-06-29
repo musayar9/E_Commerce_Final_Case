@@ -1,6 +1,7 @@
 package com.example.ecommerceproject.ui.screens
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -31,13 +32,23 @@ class BasketScreen : Fragment() {
             if(basketList.isEmpty()){
                 binding.emptyBasket.visibility = View.VISIBLE
                 binding.recyclerBasketView.visibility = View.GONE
+                binding.basketHeader.visibility=View.GONE
+                binding.sumField.visibility= View.GONE
                 basketAdapter = BasketAdapter(requireContext(), basketList, viewModel)
                 binding.recyclerBasketView.adapter = basketAdapter
+
             }else{
                 basketAdapter = BasketAdapter(requireContext(), basketList, viewModel)
                 binding.recyclerBasketView.adapter = basketAdapter
                 binding.emptyBasket.visibility = View.GONE
+                binding.sumField.visibility= View.VISIBLE
+                binding.basketHeader.visibility=View.VISIBLE
                 binding.recyclerBasketView.visibility = View.VISIBLE
+                binding.basketSize.text = basketList.size.toString()
+                var sumPrice = basketList.sumOf { it -> it.siparisAdeti * it.fiyat }
+                var convertPrice  = viewModel.formatPrice(sumPrice)
+                binding.sumPrice.text = convertPrice.toString()
+                Log.e("Sum Price", "toplam fiyat: -> ${sumPrice}" )
             }
 
             basketAdapter.updateList(basketList)

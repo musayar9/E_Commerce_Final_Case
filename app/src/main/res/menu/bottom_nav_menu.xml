@@ -6,7 +6,7 @@
         android:title="Anasayfa" />
     <item
         android:id="@+id/basketScreen"
-        android:icon="@drawable/add_shopping_cart"
+        android:icon="@drawable/shopping_basket"
         android:title="Sepet" />
     <item
         android:id="@+id/favoriteScreen"

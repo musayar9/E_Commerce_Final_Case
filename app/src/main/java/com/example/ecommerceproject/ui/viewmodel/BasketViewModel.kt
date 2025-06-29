@@ -13,6 +13,8 @@ import com.example.ecommerceproject.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.text.NumberFormat
+import java.util.Locale
 import javax.inject.Inject
 
 @HiltViewModel
@@ -46,5 +48,10 @@ class BasketViewModel @Inject constructor(var commerceRepository: CommerceReposi
     }
 
 
+    fun formatPrice(price: Int): String {
+        val format = NumberFormat.getCurrencyInstance(Locale("tr", "TR"))
+        Log.d("MainViewModel", "Price is ${format.format(price)}")
+        return format.format(price)
+    }
 
 }

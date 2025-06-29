@@ -48,19 +48,7 @@ class MainScreen : Fragment() {
         }
 
 
-        binding.producDetailBtn.setOnClickListener{
-            it.findNavController().navigate(toProductDetailScreen)
-        }
 
-
-
-        binding.favoriteBtn.setOnClickListener {
-            it.findNavController().navigate(toFavoriteScreen)
-        }
-
-        binding.productBasket.setOnClickListener{
-            it.findNavController().navigate(toBasketScreen)
-        }
 
         return binding.root
     }

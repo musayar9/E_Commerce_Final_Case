@@ -46,11 +46,12 @@ class BasketAdapter(var mContext:Context, var basketList:List<ProductBaskets>, v
 
         val imageUrl = "http://kasimadalan.pe.hu/urunler/resimler/${basket.resim}"
         Glide.with(mContext).load(imageUrl).override(64,64).into(basketDesign.productImage)
-        basketDesign.productName.text=basket.ad.toString()
+        basketDesign.productName.text= "${basket.ad.toString()} / ${basket.marka} "
         totalPrice = basket.siparisAdeti * basket.fiyat
-        basketDesign.price.text = totalPrice.toString()
-        basketDesign.productAmount.text = basket.siparisAdeti.toString()
-
+        var converPrice = viewModel.formatPrice(totalPrice)
+        basketDesign.price.text = converPrice.toString()
+        basketDesign.productAmount.text = "Adet: ${basket.siparisAdeti.toString()}"
+        basketDesign.productCategory.text = "${basket.kategori}"
 
 
         basketDesign.deleteProduct.setOnClickListener{
