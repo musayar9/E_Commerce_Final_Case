@@ -116,17 +116,123 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/categoryHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:paddingHorizontal="10dp"
+        android:text="Kategori"
+
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+
+    <TextView
+        android:id="@+id/categorySeeAll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:paddingHorizontal="10dp"
+        android:text="Tümünü Gör"
+        android:textColor="@color/indigo"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/categoryHeader" />
+
+    <ImageView
+        android:id="@+id/categoryArrowRigthOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/arrow_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/categoryHeader" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerProductList"
-        android:layout_width="match_parent"
+        android:id="@+id/recyclerCategory"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingHorizontal="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:foregroundGravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/categoryHeader" />
 
-        android:layout_marginBottom="20dp"
-        />
+    <TextView
+        android:id="@+id/productHead"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:paddingHorizontal="10dp"
+        android:text="Ürünler"
+        android:textSize="24sp"
 
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerProductList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerCategory" />
 
+    <TextView
+        android:id="@+id/productSeeAll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:paddingHorizontal="10dp"
+        android:text="Tümünü Gör"
+        android:textColor="@color/indigo"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/productHead" />
 
+    <ImageView
+        android:id="@+id/productArrowRigthTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/arrow_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/productHead" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerProductList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="500dp"
+        android:paddingHorizontal="10dp"
+        android:clipToPadding="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productHead" />
+
+    <ProgressBar
+        android:id="@+id/maimProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/indigo"
+        android:indeterminateTintMode="src_in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.566" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

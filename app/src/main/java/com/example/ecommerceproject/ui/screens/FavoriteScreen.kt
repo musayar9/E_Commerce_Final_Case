@@ -27,7 +27,6 @@ class FavoriteScreen : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
        binding = FavoriteScreenBinding.inflate(inflater, container, false)
         binding.recyclerFavorite.layoutManager = StaggeredGridLayoutManager(
             2,
@@ -63,8 +62,6 @@ class FavoriteScreen : Fragment() {
         val tempViewModel:MainViewModel by activityViewModels()
         mainViewModel=tempViewModel
     }
-
-
 
     override fun onResume() {
         super.onResume()

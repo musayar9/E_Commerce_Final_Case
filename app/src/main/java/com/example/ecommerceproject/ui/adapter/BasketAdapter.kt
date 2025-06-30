@@ -20,16 +20,12 @@ class BasketAdapter(var mContext:Context, var basketList:List<ProductBaskets>, v
     :RecyclerView.Adapter<BasketAdapter.BasketHolder>()
 
 {
-
-
     inner class BasketHolder(var binding:BasketCardBinding):RecyclerView.ViewHolder(binding.root)
 
     private var totalPrice:Int = 0
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BasketHolder {
-
-        Log.e("basketList", "$basketList")
             val binding = BasketCardBinding.inflate(LayoutInflater.from(mContext), parent, false)
-        return BasketHolder(binding)
+            return BasketHolder(binding)
     }
 
     override fun getItemCount(): Int = basketList.size
@@ -37,12 +33,9 @@ class BasketAdapter(var mContext:Context, var basketList:List<ProductBaskets>, v
         basketList = newList
         notifyDataSetChanged()
     }
-
-
     override fun onBindViewHolder(holder: BasketHolder, position: Int) {
         val basket = basketList.get(position)
         val basketDesign = holder.binding
-
 
         val imageUrl = "http://kasimadalan.pe.hu/urunler/resimler/${basket.resim}"
         Glide.with(mContext).load(imageUrl).override(64,64).into(basketDesign.productImage)
@@ -69,8 +62,6 @@ class BasketAdapter(var mContext:Context, var basketList:List<ProductBaskets>, v
                     dialog.dismiss()
                 }
                 .show()
-
-
 
         }
     }

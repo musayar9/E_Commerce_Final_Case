@@ -33,6 +33,13 @@ RecyclerView.Adapter<CommerceAdapter.CardHolder>()
 
     override fun getItemCount(): Int = productList.size
 
+
+
+    fun updateData(newList:List<Products>){
+        productList = newList
+        notifyDataSetChanged()
+    }
+
     override fun onBindViewHolder(holder: CardHolder, position: Int) {
         val product = productList.get(position)
 
@@ -51,15 +58,10 @@ RecyclerView.Adapter<CommerceAdapter.CardHolder>()
             it.findNavController().navigate(toProductDetail)
         }
 
-
-
-
         val isFavorite = viewModel.favoriteList.value?.any { it.id == product.id } ?: false
         productDesign.favorite.setImageResource(
             if (isFavorite) R.drawable.favorite_regular else R.drawable.empty_favorite
         )
-
-
         productDesign.favorite.setOnClickListener {
             if (isFavorite) {
                 viewModel.removeFavorite(product)

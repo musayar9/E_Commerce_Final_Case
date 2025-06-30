@@ -31,14 +31,13 @@ class BasketViewModel @Inject constructor(var commerceRepository: CommerceReposi
                 val result = commerceRepository.getToProductsBasket(kullaniciAdi)
                 basketProductsList.value = result
             } catch (e: Exception) {
-                // Hata durumunda log yaz veya kullanıcıya bilgi ver
+
                 Log.e("error", "${e.message}")
-                e.printStackTrace() // Logcat'e yazmak için
-                basketProductsList.value = emptyList() // Listeyi temizle veya null bırakabilirsin
+                e.printStackTrace()
+                basketProductsList.value = emptyList()
             }
         }
     }
-
 
     fun deleteProductBasket(sepetId:Int, kullaniciAdi: String){
         CoroutineScope(Dispatchers.Main).launch {

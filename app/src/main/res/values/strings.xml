@@ -4,4 +4,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="empty_message">Henüz favorilere ürün eklemediniz.\nAna ekrandan ürünleri favorilere ekleyin!</string>
     <string name="content_detail_text">Ürünümüz dayanıklı ve uzun ömürlü kullanım için özenle seçilmiş malzemelerle üretilmiştir. Estetik görünümüyle hem şıklığı hem de işlevselliği bir arada sunar.</string>
+    <string name="empty_basket_message">Henüz sepetinize ürün eklmediniz</string>
 </resources>

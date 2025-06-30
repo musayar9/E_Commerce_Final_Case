@@ -28,9 +28,15 @@ class BasketScreen : Fragment() {
 
         binding = BasketScreenBinding.inflate(inflater, container, false)
         binding.recyclerBasketView.layoutManager = LinearLayoutManager(requireContext())
+        binding.emptyBasket.visibility = View.GONE
+        binding.progressBar.visibility = View.VISIBLE
+        binding.basketHeader.visibility=View.GONE
+        binding.sumField.visibility= View.GONE
         viewModel.basketProductsList.observe(viewLifecycleOwner){basketList ->
+            binding.progressBar.visibility = View.GONE
             if(basketList.isEmpty()){
                 binding.emptyBasket.visibility = View.VISIBLE
+                binding.paymentBtn.visibility=View.GONE
                 binding.recyclerBasketView.visibility = View.GONE
                 binding.basketHeader.visibility=View.GONE
                 binding.sumField.visibility= View.GONE
@@ -40,6 +46,7 @@ class BasketScreen : Fragment() {
             }else{
                 basketAdapter = BasketAdapter(requireContext(), basketList, viewModel)
                 binding.recyclerBasketView.adapter = basketAdapter
+                binding.paymentBtn.visibility=View.VISIBLE
                 binding.emptyBasket.visibility = View.GONE
                 binding.sumField.visibility= View.VISIBLE
                 binding.basketHeader.visibility=View.VISIBLE

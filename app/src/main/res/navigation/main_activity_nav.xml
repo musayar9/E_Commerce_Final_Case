@@ -59,6 +59,13 @@
             />
 
     </fragment>
+    <fragment
+        android:id="@+id/profileScreen"
+        android:name="com.example.ecommerceproject.ui.screens.ProfileScreen"
+        android:label="favorite_screen"
+        tools:layout="@layout/profile_screen"
 
+        >
+    </fragment>
 
 </navigation>

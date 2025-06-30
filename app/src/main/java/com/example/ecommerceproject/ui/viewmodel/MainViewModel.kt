@@ -16,16 +16,19 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(var commerceRepository: CommerceRepository):ViewModel() {
+    val filteredProducts = MutableLiveData<List<Products>>()
     var productsList = MutableLiveData<List<Products>>()
     private val favoriteListArray = MutableLiveData<ArrayList<Products>>(java.util.ArrayList())
     val favoriteList: LiveData<ArrayList<Products>> get() = favoriteListArray
     init{
         getAllProducts()
+
     }
 
     fun getAllProducts(){
         CoroutineScope(Dispatchers.Main).launch {
             productsList.value = commerceRepository.getAllProducts()
+            filteredProducts.value =commerceRepository.getAllProducts()
         }
     }
 
@@ -52,4 +55,6 @@ class MainViewModel @Inject constructor(var commerceRepository: CommerceReposito
         Log.d("MainViewModel", "Price is ${format.format(price)}")
         return format.format(price)
     }
+
+
 }

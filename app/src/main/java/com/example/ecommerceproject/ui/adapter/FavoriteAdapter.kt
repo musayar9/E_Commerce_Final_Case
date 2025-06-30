@@ -27,9 +27,6 @@ RecyclerView.Adapter<FavoriteAdapter.FavoriteHolder>(){
 
     override fun getItemCount():Int = favoriteList.size
 
-
-
-
     override fun onBindViewHolder(holder: FavoriteHolder, position: Int) {
         val product = favoriteList.get(position)
         Log.e("Favorite", "$product")
@@ -43,22 +40,18 @@ RecyclerView.Adapter<FavoriteAdapter.FavoriteHolder>(){
         val price = viewModel.formatPrice(product.fiyat)
         productDesign.productPrice.text = "${price.toString()}"
 
-
-
-        // Favori durumunu güncelle
         val isFavorite = viewModel.favoriteList.value?.any { it.id == product.id } ?: false
         productDesign.favorite.setImageResource(
             if (isFavorite) R.drawable.favorite_regular else R.drawable.empty_favorite
         )
 
         if(isFavorite){
-
             productDesign.favorite.setImageResource(R.drawable.favorite_regular)
         }else{
             productDesign.favorite.setImageResource(R.drawable.empty_favorite)
         }
 
-        productDesign.favorite.setOnClickListener {
+             productDesign.favorite.setOnClickListener {
 
 
 //            if (isFavorite) {
@@ -74,17 +67,10 @@ RecyclerView.Adapter<FavoriteAdapter.FavoriteHolder>(){
             Toast.makeText(mContext, "${product.ad} ürünü favorilerden çıkarıldı", Toast.LENGTH_SHORT).show()
             notifyItemChanged(position)
         }
-
-
         productDesign.cardViewToDo.setOnClickListener{
             val toProductDetail = FavoriteScreenDirections.toProductDetailScreen(productDetail = product)
             it.findNavController().navigate(toProductDetail)
         }
-
-
-
-
-
     }
 
     fun updateList(newList: List<Products>) {

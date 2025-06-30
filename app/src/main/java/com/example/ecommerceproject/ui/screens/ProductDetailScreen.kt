@@ -49,6 +49,7 @@ class ProductDetailScreen : Fragment() {
         val price = viewModel.formatPrice(product.fiyat)
         binding.productPrice.text = price.toString()
         binding.productOnlyPrice.text = price.toString()
+        binding.productBrand.text = product.marka
         binding.incrementBtn.setOnClickListener{
             amount += 1
             productPrice = amount * product.fiyat
@@ -90,7 +91,6 @@ findNavController().popBackStack()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //
         val tempViewModel: ProductDetailViewModel by viewModels()
         viewModel = tempViewModel
     }
