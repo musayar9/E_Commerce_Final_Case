@@ -33,7 +33,6 @@ class FavoriteScreen : Fragment() {
             StaggeredGridLayoutManager.VERTICAL
         )
 
-
         adapter = FavoriteAdapter(requireContext(), emptyList(),mainViewModel)
         binding.recyclerFavorite.adapter = adapter
 

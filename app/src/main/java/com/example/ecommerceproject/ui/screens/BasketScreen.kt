@@ -71,8 +71,6 @@ class BasketScreen : Fragment() {
 
     }
 
-
-
     override fun onResume() {
         super.onResume()
        viewModel.getToProductsBasket(kullaniciAdi = "musa_sayar")

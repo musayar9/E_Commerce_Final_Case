@@ -13,12 +13,10 @@
         android:layout_height="wrap_content"
         android:background="@color/indigo"
         android:minHeight="?attr/actionBarSize"
-
         android:paddingHorizontal="20dp"
         android:paddingBottom="25dp"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -27,7 +25,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="45dp"
-
             >
 
             <com.google.android.material.imageview.ShapeableImageView
@@ -46,7 +43,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-
                 android:fontFamily="@font/montserrat_bold"
                 android:text="Musa Sayar"
                 android:textColor="@color/white"
@@ -89,7 +85,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-
         android:orientation="horizontal"
         android:paddingHorizontal="10dp"
         android:paddingVertical="12dp"
@@ -124,7 +119,6 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="4dp"
-
                 android:src="@drawable/shopping_basket" />
 
             <TextView
@@ -149,7 +143,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/basketHeader" />
 
-
     <LinearLayout
         android:id="@+id/emptyBasket"
         android:layout_width="350dp"
@@ -161,15 +154,12 @@
         android:paddingVertical="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
-
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <ImageView
             android:id="@+id/basketIcon"
             android:layout_width="150dp"
-
             android:layout_height="120dp"
             android:layout_weight="1"
             android:paddingBottom="10dp"
@@ -198,7 +188,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="176dp"
         android:background="@drawable/rounded_gray_bg_2"
@@ -255,7 +244,7 @@
         android:layout_marginTop="10dp"
         android:backgroundTint="@color/indigo"
         android:padding="10dp"
-        android:text="Ödeme Yap"
+        android:text="@string/make_payment"
         android:textAppearance="@color/indigo"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -263,7 +252,6 @@
         app:iconGravity="textStart"
         app:iconTint="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sumField" />
 </androidx.constraintlayout.widget.ConstraintLayout>

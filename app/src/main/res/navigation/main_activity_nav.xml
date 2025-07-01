@@ -15,7 +15,6 @@
         <action android:id="@+id/toProductDetailScreen"
             app:destination="@+id/productDetailScreen"
             />
-
         <action android:id="@+id/toBasketScreen"
             app:destination="@+id/basketScreen"
             />
@@ -23,15 +22,12 @@
             app:destination="@+id/favoriteScreen"
             />
 
-
-
     </fragment>
     <fragment
         android:id="@+id/productDetailScreen"
         android:name="com.example.ecommerceproject.ui.screens.ProductDetailScreen"
         android:label="product_detail_screen"
         tools:layout="@layout/product_detail_screen" >
-
         <action android:id="@+id/toBasketScreen"
             app:destination="@+id/basketScreen"
             />
@@ -45,14 +41,12 @@
         tools:layout="@layout/basket_screen"
         >
 
-
     </fragment>
     <fragment
         android:id="@+id/favoriteScreen"
         android:name="com.example.ecommerceproject.ui.screens.FavoriteScreen"
         android:label="favorite_screen"
         tools:layout="@layout/favorite_screen"
-
         >
         <action android:id="@+id/toProductDetailScreen"
             app:destination="@+id/productDetailScreen"
@@ -64,7 +58,6 @@
         android:name="com.example.ecommerceproject.ui.screens.ProfileScreen"
         android:label="favorite_screen"
         tools:layout="@layout/profile_screen"
-
         >
     </fragment>
 

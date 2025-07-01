@@ -52,16 +52,6 @@ RecyclerView.Adapter<FavoriteAdapter.FavoriteHolder>(){
         }
 
              productDesign.favorite.setOnClickListener {
-
-
-//            if (isFavorite) {
-//                viewModel.removeFavorite(product)
-//                productDesign.favorite.setImageResource(R.drawable.empty_favorite)
-//
-//            } else {
-//                viewModel.addFavorite(product)
-//                productDesign.favorite.setImageResource(R.drawable.favorite_regular)
-//            }
             viewModel.removeFavorite(product)
              productDesign.favorite.setImageResource(R.drawable.empty_favorite)
             Toast.makeText(mContext, "${product.ad} ürünü favorilerden çıkarıldı", Toast.LENGTH_SHORT).show()

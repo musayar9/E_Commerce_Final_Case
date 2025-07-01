@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#ff6000</color>
     <color name="gray50">#f1f1f1</color>
+    <color name="gray75">#e5e7eb</color>
     <color name="gray100">#7b7b7b</color>
     <color name="gray150">#757575</color>
 

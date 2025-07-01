@@ -21,12 +21,10 @@
             android:id="@+id/backButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
-
             android:layout_marginStart="16dp"
             android:layout_marginTop="40dp"
             android:background="@drawable/like_full_corner_bg"
             android:padding="12dp"
-
             android:src="@drawable/arrow_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +34,6 @@
             android:layout_width="230dp"
             android:layout_height="206dp"
             android:layout_marginVertical="20dp"
-
             android:src="@drawable/phone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +63,6 @@
             <TextView
                 android:id="@+id/productCategory"
                 android:layout_width="wrap_content"
-
                 android:layout_height="wrap_content"
                 android:text="Phone"
                 android:textColor="@color/white"
@@ -84,7 +80,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-
         android:text="Iphone"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -97,10 +92,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-
         android:text="Apple"
         android:textSize="16sp"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productName" />
 
@@ -108,10 +101,8 @@
         android:id="@+id/productOnlyPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-
         android:text="250.000"
         android:textSize="26sp"
         android:textStyle="bold"
@@ -123,8 +114,6 @@
         android:layout_width="wrap_content"
         android:layout_height="72dp"
         android:layout_marginVertical="8dp"
-
-
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="8dp"
         android:paddingVertical="16dp"
@@ -172,7 +161,6 @@
             android:background="@drawable/content_field"
             android:gravity="center"
             android:orientation="horizontal"
-
             android:padding="10dp"
             android:paddingHorizontal="12dp">
 
@@ -195,7 +183,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-
             android:background="@drawable/content_field"
             android:padding="10dp">
 
@@ -209,7 +196,6 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="8dp"
                 android:text="8"
-
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -224,7 +210,6 @@
         android:layout_marginVertical="16dp"
         android:layout_marginTop="4dp"
         android:orientation="vertical"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
@@ -244,7 +229,6 @@
             android:paddingVertical="6dp"
             android:text="@string/content_detail_text"
             android:textColor="@color/slate150"
-
             android:textSize="16sp" />
     </LinearLayout>
 
@@ -256,8 +240,7 @@
         android:layout_height="52dp"
         android:layout_marginTop="36dp"
         android:backgroundTint="@color/indigo"
-        android:text="Sepete Ekle"
-
+        android:text="@string/add_basket"
         android:textAppearance="@color/indigo"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -273,22 +256,19 @@
         android:id="@+id/linearLayout"
         android:layout_width="195dp"
         android:layout_height="55dp"
-
         android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4">
-
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/decrementBtn"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/indigo"
-            android:text="-"
+            android:text="@string/decrement_btn"
             android:textSize="24sp"
             app:cornerRadius="@dimen/dimen_8"
             app:iconGravity="textStart"
@@ -297,14 +277,14 @@
 
         <TextView
             android:id="@+id/productAmount"
-            android:layout_width="140dp"
+            android:layout_width="70dp"
             android:layout_height="35dp"
             android:layout_gravity="center_vertical"
-            android:layout_weight="1"
+
             android:gravity="center_horizontal"
             android:textColor="@color/slate150"
             android:text="TextView"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
         <com.google.android.material.button.MaterialButton
@@ -313,7 +293,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/indigo"
-            android:text="+"
+            android:text="@string/increment_btn"
             android:textSize="24sp"
             app:cornerRadius="@dimen/dimen_8"
             app:iconGravity="textStart"
@@ -345,8 +325,5 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contentDetail" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

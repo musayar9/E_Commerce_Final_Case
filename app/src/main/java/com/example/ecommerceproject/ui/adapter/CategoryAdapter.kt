@@ -53,26 +53,17 @@ class CategoryAdapter(private val items:List<Category>, var viewModel: MainViewM
         if(selectedPosition == position){
             holder.binding.categoryFields.setBackgroundResource(R.drawable.selected_category_field)
             holder.binding.categoryText.setTextColor(context.resources.getColor(R.color.gray50))
-
             if(item.categoryText == "Hepsi"){
                 viewModel.getAllProducts()
             }else{
                 val filteredList = viewModel.productsList.value?.filter { it->it.kategori == item.categoryText }
                 viewModel.filteredProducts.value = filteredList
-
             }
-
         }else{
             holder.binding.categoryFields.setBackgroundResource(R.drawable.category_fields)
             holder.binding.categoryText.setTextColor(context.resources.getColor(R.color.gray150))
         }
 
-
-
-
     }
-
-
-
 
 }

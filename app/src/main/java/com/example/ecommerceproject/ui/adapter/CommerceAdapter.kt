@@ -32,9 +32,6 @@ RecyclerView.Adapter<CommerceAdapter.CardHolder>()
     }
 
     override fun getItemCount(): Int = productList.size
-
-
-
     fun updateData(newList:List<Products>){
         productList = newList
         notifyDataSetChanged()

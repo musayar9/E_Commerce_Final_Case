@@ -72,7 +72,7 @@ class ProductDetailScreen : Fragment() {
 
         }
         binding.backButton.setOnClickListener{
-findNavController().popBackStack()
+        findNavController().popBackStack()
         }
         binding.addBasketBtn.setOnClickListener{
             val ad = product.ad

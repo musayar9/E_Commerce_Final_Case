@@ -19,9 +19,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:navGraph="@navigation/main_activity_nav"
-
     />
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/navContainer"
@@ -36,7 +34,6 @@
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:background="@color/gray50"
-
             app:layout_constraintBottom_toTopOf="@+id/navigationField"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

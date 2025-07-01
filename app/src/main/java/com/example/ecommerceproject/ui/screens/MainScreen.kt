@@ -47,9 +47,6 @@ class MainScreen : Fragment() {
         Category(3, "aksesuar", "Aksesuar"),
         Category(4, "kozmetik", "Kozmetik")
     )
-
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -70,10 +67,6 @@ class MainScreen : Fragment() {
             StaggeredGridLayoutManager.VERTICAL
         )
         binding.recyclerProductList.adapter = commerceAdapter
-//        viewModel.productsList.observe(viewLifecycleOwner){
-//            val commerceAdapter = CommerceAdapter(requireContext(), it, viewModel)
-//            binding.recyclerProductList.adapter = commerceAdapter
-//        }
         viewModel.filteredProducts.observe(viewLifecycleOwner) { filteredList ->
             binding.maimProgressBar.visibility =View.GONE
             commerceAdapter.updateData(filteredList ?: emptyList())
