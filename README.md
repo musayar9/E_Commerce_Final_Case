@@ -61,10 +61,12 @@ Aşağıda kullanılan temel kütüphaneler listelenmiştir:
 
 Aşağıda Sayarica uygulamasının temel ekranlarının görselleri tablo şeklinde sunulmuştur:
 
-| Ana Sayfa                                            | Ürün Detay                                           | Sepet                                      |
-|------------------------------------------------------|------------------------------------------------------|--------------------------------------------|
-| ![Ana Sayfa](app/src/screenshots/mainscreen.png)     | ![Ürün Detay](app/src/screenshots/productdetail.png) | ![Sepet](screenshots/basketscreen.png)     |
-| ![Kategori Filtresi](screenshots/filtercategory.png) | ![Favoriler](screenshots/favoriscreen.png)           | ![Ürün Filtreleme](screenshots/search.png) |
+| Ana Sayfa                                           | Ürün Detay                                           | Sepet                                              |
+|-----------------------------------------------------|------------------------------------------------------|----------------------------------------------------|
+| ![Ana Sayfa](app/src/screenshots/mainscreen.png)    | ![Ürün Detay](app/src/screenshots/productdetail.png) | ![Sepet](app/src/screenshots/basketscreen.png)     |
+| ![Ürün Silme](app/srcscreenshots/deleteproduct.png) | ![Boş  Sepet](app/src/screenshots/emptybasket.png)   | ![Favoriler](app/srcscreenshots/favoriscreen.png)  |
+| ![Boş Favor](app/src/screenshots/emptyfavori.png)   | ![Kategori Filtresi](app/src/screenshots/filtercategory.png)    | ![Ürün Filtreleme](app/src/screenshots/search.png) |
+| ![Profil](app/src/screenshots/profilescreen.png)    | 
 
 
 
